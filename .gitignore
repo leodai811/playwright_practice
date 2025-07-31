@@ -1,0 +1,15 @@
+# Python 虛擬環境
+.venv/
+venv/
+
+# pytest 快取
+.pytest_cache/
+
+# Playwright 錄影輸出
+videos/
+
+# VSCode 設定
+.idea/
+
+# macOS 系統檔
+.DS_Store
