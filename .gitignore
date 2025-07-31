@@ -11,5 +11,5 @@ videos/
 # VSCode 設定
 .idea/
 
-# macOS 系統檔
+# 移除 macOS 系統檔
 .DS_Store
