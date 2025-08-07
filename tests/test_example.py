@@ -26,20 +26,14 @@ def enter_text(page: Page, selector: str, text: str):
 def verify_member_id(page: Page, expected_id: str):
     try:
         page.wait_for_selector("#member_no", timeout=10000)
-
-        member_no = None
-        for _ in range(5):
-            member_no = page.eval_on_selector("#member_no", "el => el.value")
-            if member_no:
-                break
-            time.sleep(1)
-
+        member_no = page.input_value("#member_no")
         if member_no == expected_id:
             print("✅ PASS: 會員代號正確！")
         else:
             print(f"❌ FAIL: 會員代號錯誤，取得的值為 {member_no}")
     except Exception as e:
         print("❌ 會員代號欄位未找到，測試失敗！", e)
+
 
 def verify_warranty_device(page: Page, expected_serial_list: List[str]):
     try:
